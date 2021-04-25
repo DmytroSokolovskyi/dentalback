@@ -31,6 +31,7 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "client")
     private List<Teeth> teeth = new ArrayList<>();
 
+
     public Client(String username, String family, String mobile) {
         this.username = username;
         this.family = family;
