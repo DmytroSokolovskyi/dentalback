@@ -10,7 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString(exclude = "client")
+@ToString(exclude = {"client", "doctor"})
 public class Visits {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,8 @@ public class Visits {
     private Date date = new Date();
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Client client;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Doctor doctor;
     private boolean finished = false;
 
     public Visits(Date date, boolean finished) {

@@ -22,7 +22,7 @@ public class MainController {
 
     @PostMapping("/savedoctor")
     public void saveDoctor () {
-        Doctor doctor = new Doctor("Dissssssma", "Sokssssssol", "ssssssssss");
+        Doctor doctor = new Doctor("Dissssssma", "Sokssssssol", "ssssssssss", "1111111");
          System.out.println(doctor);
          doctorServices.save(doctor);
       List<Doctor> doctorsList = doctorServices.getAllDoctor();
